@@ -13,7 +13,7 @@
   // Initialize message variable
   $msg = "";
   // If upload button is clicked ...
-  if (isset($_POST['upload'])) {
+  if (isset($_POST['upload']) AND $_FILES['image']['size'] > 0) {
     // Get image name
     $ext = explode('.',  $_FILES['image']['name']);
     $_FILES['image']['name'] = uniqid().'.'.$ext[1];

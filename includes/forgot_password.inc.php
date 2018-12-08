@@ -27,7 +27,7 @@
  
          $mail->isHTML(true);
          $mail->Subject='Reset password';
-         $mail->Body="Please click <a href='http://localhost/PHP-Playground/Camagru/reset.php?email=$email'> here </a> to reset your password";
+         $mail->Body="Please click <a href='http://localhost/reset.php?email=$email'> here </a> to reset your password";
          $mail->send();
          header("Location: ../forgot_password.php?login=<b><p style='color:green;'>Password reset link sent</p></b>");
     }
