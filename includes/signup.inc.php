@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
 
                     $mail->isHTML(true);
                     $mail->Subject='Verification';
-                    $mail->Body="Please click <a href='http://localhost/confirm.php?email=$email&token=$token'> here </a> to verify email";
+                    $mail->Body="Please click <a href='http://localhost:8888/confirm.php?email=$email&token=$token'> here </a> to verify email";
                     if (!$mail->send()){
                         header("Location: ../register.php?signup=MalError");
                         exit();
