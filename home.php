@@ -7,6 +7,7 @@
 
   include_once 'includes/dbh.inc.php';
   include 'header.php';
+  include 'camera.php';
   $db = $conn;
   $owner = $_SESSION['email'];
 
