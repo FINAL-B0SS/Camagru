@@ -25,10 +25,10 @@
             <div class="col-md-12 text-center"><br/>
             <form method="POST" action="storeImage.php">
                 <input type="radio" name="stencil" value="stencils/none.png"> None
-                <input type="radio" name="stencil" value="stencils/cat.png"> Cat Head
-                <input type="radio" name="stencil" value="stencils/fire.png"> Fire
+                <input type="radio" name="stencil" value="stencils/snow.png"> Cold Rain
+                <input type="radio" name="stencil" value="stencils/rain.png"> Regular Rain
                 <input type="radio" name="stencil" value="stencils/money.png"> Money Rain
-                <input type="radio" name="stencil" value="stencils/waifu.png"> Waifu<br><br>
+                <input type="radio" name="stencil" value="stencils/space.png"> Solid Rain<br><br>
             </form>
                 <button class="btn btn-success">Submit</button>
             </div>
