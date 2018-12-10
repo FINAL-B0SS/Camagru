@@ -21,7 +21,8 @@
     $filename = str_replace("images/","",$file);
 
     // Load the stamp and the photo to apply the watermark to
-    $stamp = imagecreatefrompng('stencils/moneyRain.png');
+    $stencil = $_POST['stencil'];
+    $stamp = imagecreatefrompng($stencil);
     $im = imagecreatefromjpeg('images/'.$filename);
 
     // Set the margins for the stamp and get the height/width of the stamp image

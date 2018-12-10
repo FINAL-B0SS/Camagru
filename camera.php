@@ -22,8 +22,14 @@
             <div class="col-md-6">
                 <div id="results">Your captured image will appear here...</div>
             </div>
-            <div class="col-md-12 text-center">
-                <br/>
+            <div class="col-md-12 text-center"><br/>
+            <form method="POST" action="storeImage.php">
+                <input type="radio" name="stencil" value="stencils/none.png"> None
+                <input type="radio" name="stencil" value="stencils/cat.png"> Cat Head
+                <input type="radio" name="stencil" value="stencils/fire.png"> Fire
+                <input type="radio" name="stencil" value="stencils/money.png"> Money Rain
+                <input type="radio" name="stencil" value="stencils/waifu.png"> Waifu<br><br>
+            </form>
                 <button class="btn btn-success">Submit</button>
             </div>
         </div>
