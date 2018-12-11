@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie-edge"> 
     <title>Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="home_style.css">
+    <link rel="stylesheet" href="styles/home_style.css">
 </head>
 <body>
 

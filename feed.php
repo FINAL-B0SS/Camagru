@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <title>Feed</title>
-<link rel="stylesheet" href="home_style.css">
+<link rel="stylesheet" href="styles/home_style.css">
 
 <?php
 
