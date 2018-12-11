@@ -14,47 +14,37 @@ try {
 	echo $e->getMessage()."<br />";
 	die();
 }
+
 //Connect to database 
 $dsn = "mysql:host=$DB_DSN;dbname=$DB_NAME;charset=$charset";
 try {
 	$dbConn = new PDO($dsn, $DB_USER, $DB_PASSWORD, $opt);
-	//Create users table
-	$sql = "CREATE TABLE IF NOT EXISTS users (
-		user_id INT PRIMARY KEY AUTO_INCREMENT,
-		user_first VARCHAR(50) NOT NULL,
-		user_last VARCHAR(50) NOT NULL,
-		user_email VARCHAR(150) NOT NULL,
-		user_activate BOOLEAN DEFAULT 0 NOT NULL,
-		user_activate_hash VARCHAR(255) DEFAULT NULL,
-		user_username VARCHAR(50) NOT NULL,
-		user_pwd_hash VARCHAR(255) NOT NULL,
-		user_forgot_pwd_hash VARCHAR(255) DEFAULT NULL,
-		user_notification BOOLEAN DEFAULT 1 NOT NULL,
-		UNIQUE KEY unique_user (user_username),
-		UNIQUE KEY unique_email (user_email)
-	) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB ROW_FORMAT=DYNAMIC;";
+	//Create comments table
+	$sql = "CREATE TABLE `comments` (
+		`id` int(11) NOT NULL,
+		`owner` varchar(256) NOT NULL,
+		`image` varchar(256) NOT NULL,
+		`comment` varchar(256) NOT NULL
+	  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 	$dbConn->exec($sql);
 	//Create images table
-	$sql = "CREATE TABLE IF NOT EXISTS images (
-		image_id INT PRIMARY KEY AUTO_INCREMENT,
-		user_id INT NOT NULL,
-		image LONGTEXT NOT NULL
-	) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB ROW_FORMAT=DYNAMIC;";
+	$sql = "CREATE TABLE `images` (
+		`id` int(11) NOT NULL,
+		`image` varchar(100) NOT NULL,
+		`owner` varchar(256) NOT NULL,
+		`likes` int(11) NOT NULL
+	  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 	$dbConn->exec($sql);
-	//Create likes table
-	$sql = "CREATE TABLE IF NOT EXISTS likes (
-		like_id INT PRIMARY KEY AUTO_INCREMENT,
-		image_id INT NOT NULL,
-		like_user_id INT NOT NULL
-	) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB ROW_FORMAT=DYNAMIC;";
-	$dbConn->exec($sql);
-	//Create comments table
-	$sql = "CREATE TABLE IF NOT EXISTS comments (
-		comment_id INT PRIMARY KEY AUTO_INCREMENT,
-		image_id INT NOT NULL,
-		comment_user_id INT NOT NULL,
-		comment TEXT NOT NULL
-	) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB ROW_FORMAT=DYNAMIC;";
+	//Create users table
+	$sql = "CREATE TABLE `users` (
+		`id` int(11) NOT NULL,
+		`name` varchar(256) DEFAULT NULL,
+		`password` varchar(256) DEFAULT NULL,
+		`email` varchar(256) DEFAULT NULL,
+		`notify` int(1) NOT NULL DEFAULT '1',
+		`isEmailConfirmed` int(11) DEFAULT '0',
+		`token` varchar(256) DEFAULT NULL
+	  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 	$dbConn->exec($sql);
 } catch (PDOException $e) {
 	echo $e->getMessage()."<br />";
