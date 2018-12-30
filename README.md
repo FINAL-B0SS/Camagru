@@ -12,8 +12,6 @@ Camagru is an Instagram-like web application for capturing and sharing photos. T
 * MySQL
 * HTML/CSS
 
-<a href="#top">↥ back to top</a>
-
 ## <a name="features">Features</a>
 
 * User registration with account activation via email
@@ -22,8 +20,6 @@ Camagru is an Instagram-like web application for capturing and sharing photos. T
 * Gallery page with infinite scroll: view, like or comment on any shared photos
 * Settings page: modify account information and notification preference
 * Notify owner of the post via email when there is a new comment
-
-<a href="#top">↥ back to top</a>
 
 ## <a name="run">Run Camagru Locally</a>
 
@@ -49,5 +45,3 @@ $ service mysql start
 #### `Step 4` - in browser, open [http://localhost:80/config/setup.php](http://localhost:80/config/setup.php)
 
 This will create the database and tables in MySQL. Now your very own Camagru web application is ready!
-
-<a href="#top">↥ back to top</a>
